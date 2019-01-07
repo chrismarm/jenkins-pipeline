@@ -1,9 +1,10 @@
 #!/bin/bash
 
-export REGISTRY="linuxfacilito.online:5043"
+# Variables to login in docker.io and to pull the right image/tag
 export IMAGE=$(sed -n '1p' /tmp/.auth)
 export TAG=$(sed -n '2p' /tmp/.auth)
-export PASS=$(sed -n '3p' /tmp/.auth)
+export USER=$(sed -n '3p' /tmp/.auth)
+export PASS=$(sed -n '4p' /tmp/.auth)
 
-docker login -u user1 -p $PASS $REGISTRY
+docker login -u $USER -p $PASS docker.io
 cd ~/jenkins/ && docker-compose up -d
