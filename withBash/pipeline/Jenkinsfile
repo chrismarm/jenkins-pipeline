@@ -11,8 +11,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-			         jenkins/build/mvn.sh mvn -B -DskipTests clean package
-			         jenkins/build/build.sh
+			         withBash/pipeline/jenkins/build/mvn.sh mvn -B -DskipTests clean package
+			         withBash/pipeline/jenkins/build/build.sh
                 '''   
             }
             post {
