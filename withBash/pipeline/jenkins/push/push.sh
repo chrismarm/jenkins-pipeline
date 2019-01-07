@@ -4,12 +4,11 @@ echo "########################"
 echo "*** Preparing to push ***"
 echo "########################"
 
-REGISTRY="linuxfacilito.online:5043"
 IMAGE="app"
 
 echo "*** Logging in ***"
-docker login -u user1 -p $PASS $REGISTRY
+docker login -u chrismarm -p $PASS
 echo "*** Tagging image ***"
-docker tag $IMAGE:$BUILD_TAG $REGISTRY/$IMAGE:$BUILD_TAG
+docker tag $IMAGE:$BUILD_TAG $IMAGE:$BUILD_TAG
 echo "*** Pushing image ***"
-docker push $REGISTRY/$IMAGE:$BUILD_TAG
+docker push $IMAGE:$BUILD_TAG

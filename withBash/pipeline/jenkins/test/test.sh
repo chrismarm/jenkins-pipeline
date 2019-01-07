@@ -4,5 +4,6 @@ echo "################"
 echo "*** Testing  ***"
 echo "################"
 
-docker run --rm -v /root/.m2:/root/.m2 -v /home/ricardo/jenkins/jenkins_home/workspace/pipeline-docker-maven/java-app:/app -w /app maven:3-alpine "$@"
+PROJ=/home/chris/Development/Jenkins/jenkins-pipeline/withBash/jenkins_home/workspace/pipeline-docker/withBash/pipeline
+docker run --rm -v /root/.m2:/root/.m2 -v $PROJ/java-app:/app -w /app maven:3-alpine "$@"
 

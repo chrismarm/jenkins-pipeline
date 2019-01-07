@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Copia el jar
-
 cp -f withBash/pipeline/java-app/target/*.jar withBash/pipeline/jenkins/build/  
 
 echo "######################"
