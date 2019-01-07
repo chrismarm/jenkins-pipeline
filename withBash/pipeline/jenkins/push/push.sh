@@ -7,8 +7,8 @@ echo "########################"
 IMAGE="app"
 
 echo "*** Logging in ***"
-docker login -u chrismarm -p development85 docker.io
+docker login -u $PASS_USR -p $PASS_PSW docker.io
 echo "*** Tagging image ***"
-docker tag $IMAGE:$BUILD_TAG chrismarm/$IMAGE:$BUILD_TAG
+docker tag $IMAGE:$BUILD_TAG $PASS_USR/$IMAGE:$BUILD_TAG
 echo "*** Pushing image ***"
-docker push chrismarm/$IMAGE:$BUILD_TAG
+docker push $PASS_USR/$IMAGE:$BUILD_TAG
